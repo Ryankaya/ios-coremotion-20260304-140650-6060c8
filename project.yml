@@ -1,0 +1,19 @@
+name: ios-coremotion-20260304-140650-6060c8
+options:
+  bundleIdPrefix: com.ryankaya
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.ryankaya.ioscoremotiondemo
+    IPHONEOS_DEPLOYMENT_TARGET: 17.0
+targets:
+  ios-coremotion-20260304-140650-6060c8:
+    type: application
+    platform: iOS
+    sources:
+      - Sources
+    settings:
+      base:
+        INFOPLIST_FILE: Sources/Info.plist
+        SWIFT_VERSION: 5.0
+    scheme:
+      testTargets: []
