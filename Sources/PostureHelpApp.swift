@@ -2,7 +2,7 @@ import SwiftUI
 import UserNotifications
 
 @main
-struct CoreMotionDemoApp: App {
+struct PostureHelpApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
     var body: some Scene {
@@ -18,6 +18,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
         UNUserNotificationCenter.current().delegate = self
+        BackgroundTaskService.shared.registerBackgroundTasks()
         return true
     }
 

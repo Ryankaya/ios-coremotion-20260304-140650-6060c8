@@ -12,6 +12,8 @@
   <string>6.0</string>
   <key>CFBundleName</key>
   <string>$(PRODUCT_NAME)</string>
+  <key>CFBundleDisplayName</key>
+  <string>Posture Help</string>
   <key>CFBundlePackageType</key>
   <string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
   <key>CFBundleShortVersionString</key>
@@ -25,6 +27,15 @@
     <key>UIApplicationSupportsMultipleScenes</key>
     <false/>
   </dict>
+  <key>NSMotionUsageDescription</key>
+  <string>Posture Help uses motion sensors to monitor your posture and provide real-time feedback to help you maintain healthy sitting habits.</string>
+  <key>NSMotionAndFitnessUsageDescription</key>
+  <string>Posture Help detects when you're actively using your device to provide smart alerts only when needed.</string>
+  <key>UIBackgroundModes</key>
+  <array>
+    <string>processing</string>
+    <string>fetch</string>
+  </array>
   <key>UILaunchScreen</key>
   <dict/>
   <key>UISupportedInterfaceOrientations</key>

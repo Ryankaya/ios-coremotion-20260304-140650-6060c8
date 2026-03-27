@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1430"
-   version = "1.7">
+   version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES"
-      runPostActionsOnFailure = "NO">
+      buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -16,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D6F236BB28FD0AB1D2530BF"
-               BuildableName = "ios-coremotion-20260304-140650-6060c8.app"
-               BlueprintName = "ios-coremotion-20260304-140650-6060c8"
-               ReferencedContainer = "container:ios-coremotion-20260304-140650-6060c8.xcodeproj">
+               BuildableName = "PostureHelp.app"
+               BlueprintName = "PostureHelp"
+               ReferencedContainer = "container:PostureHelp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -27,21 +26,18 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      onlyGenerateCoverageForSpecifiedTargets = "NO">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D6F236BB28FD0AB1D2530BF"
-            BuildableName = "ios-coremotion-20260304-140650-6060c8.app"
-            BlueprintName = "ios-coremotion-20260304-140650-6060c8"
-            ReferencedContainer = "container:ios-coremotion-20260304-140650-6060c8.xcodeproj">
+            BuildableName = "PostureHelp.app"
+            BlueprintName = "PostureHelp"
+            ReferencedContainer = "container:PostureHelp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
       </Testables>
-      <CommandLineArguments>
-      </CommandLineArguments>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -58,13 +54,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D6F236BB28FD0AB1D2530BF"
-            BuildableName = "ios-coremotion-20260304-140650-6060c8.app"
-            BlueprintName = "ios-coremotion-20260304-140650-6060c8"
-            ReferencedContainer = "container:ios-coremotion-20260304-140650-6060c8.xcodeproj">
+            BuildableName = "PostureHelp.app"
+            BlueprintName = "PostureHelp"
+            ReferencedContainer = "container:PostureHelp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -77,13 +71,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8D6F236BB28FD0AB1D2530BF"
-            BuildableName = "ios-coremotion-20260304-140650-6060c8.app"
-            BlueprintName = "ios-coremotion-20260304-140650-6060c8"
-            ReferencedContainer = "container:ios-coremotion-20260304-140650-6060c8.xcodeproj">
+            BuildableName = "PostureHelp.app"
+            BlueprintName = "PostureHelp"
+            ReferencedContainer = "container:PostureHelp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-      </CommandLineArguments>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

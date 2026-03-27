@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3CD70F312F762EE500319C0A /* PostureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F302F762EE500319C0A /* PostureState.swift */; };
+		3CD70F332F762EE600319C0A /* PostureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F322F762EE600319C0A /* PostureConfiguration.swift */; };
+		3CD70F352F762EE700319C0A /* PostureMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F342F762EE700319C0A /* PostureMetrics.swift */; };
+		3CD70F372F762F0300319C0A /* MotionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F362F762F0300319C0A /* MotionService.swift */; };
+		3CD70F392F762F0300319C0A /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F382F762F0300319C0A /* HapticService.swift */; };
+		3CD70F3B2F762F0400319C0A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F3A2F762F0400319C0A /* NotificationService.swift */; };
+		3CD70F3D2F762F2100319C0A /* PostureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F3C2F762F2100319C0A /* PostureViewModel.swift */; };
+		3CD70F3F2F762F3400319C0A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F3E2F762F3400319C0A /* Theme.swift */; };
+		3CD70F412F762F3400319C0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F402F762F3400319C0A /* Extensions.swift */; };
+		3CD70F442F762F7700319C0A /* PostureStatusCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F432F762F7700319C0A /* PostureStatusCard.swift */; };
+		3CD70F462F762F7800319C0A /* MetricsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F452F762F7800319C0A /* MetricsCard.swift */; };
+		3CD70F482F762F7800319C0A /* SettingsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F472F762F7800319C0A /* SettingsCard.swift */; };
+		3CD70F4A2F762F7900319C0A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F492F762F7900319C0A /* ActionButton.swift */; };
+		3CD70F4C2F762F8D00319C0A /* PostureMonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F4B2F762F8D00319C0A /* PostureMonitorView.swift */; };
+		3CD70F4F2F76321500319C0A /* InstructionsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F4E2F76321500319C0A /* InstructionsCard.swift */; };
+		3CD70F522F76336200319C0A /* UserActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F512F76336200319C0A /* UserActivityService.swift */; };
+		3CD70F542F76337100319C0A /* BackgroundTaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F532F76337100319C0A /* BackgroundTaskService.swift */; };
+		3CD70F562F7633B100319C0A /* ActivityStatusCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F552F7633B100319C0A /* ActivityStatusCard.swift */; };
+		3CD70F5A2F76365A00319C0A /* DeviceMovementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F592F76365A00319C0A /* DeviceMovementService.swift */; };
+		3CD70F5E2F763D1500319C0A /* DeviceStateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F5D2F763D1500319C0A /* DeviceStateService.swift */; };
+		3CD70F612F76430900319C0A /* OrientationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD70F602F76430900319C0A /* OrientationService.swift */; };
+		D28DA011E7771D7782DDE033 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D07E673D61128B14400DED /* ContentView.swift */; };
+		EA0EEA22FDAB54D1941B473A /* PostureHelpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF511D7FED3FFA991E6F797D /* PostureHelpApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2AA3F73B9B954BB1C14859AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3CD70F302F762EE500319C0A /* PostureState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostureState.swift; sourceTree = "<group>"; };
+		3CD70F322F762EE600319C0A /* PostureConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostureConfiguration.swift; sourceTree = "<group>"; };
+		3CD70F342F762EE700319C0A /* PostureMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostureMetrics.swift; sourceTree = "<group>"; };
+		3CD70F362F762F0300319C0A /* MotionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionService.swift; sourceTree = "<group>"; };
+		3CD70F382F762F0300319C0A /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
+		3CD70F3A2F762F0400319C0A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		3CD70F3C2F762F2100319C0A /* PostureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostureViewModel.swift; sourceTree = "<group>"; };
+		3CD70F3E2F762F3400319C0A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		3CD70F402F762F3400319C0A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3CD70F432F762F7700319C0A /* PostureStatusCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostureStatusCard.swift; sourceTree = "<group>"; };
+		3CD70F452F762F7800319C0A /* MetricsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsCard.swift; sourceTree = "<group>"; };
+		3CD70F472F762F7800319C0A /* SettingsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCard.swift; sourceTree = "<group>"; };
+		3CD70F492F762F7900319C0A /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		3CD70F4B2F762F8D00319C0A /* PostureMonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostureMonitorView.swift; sourceTree = "<group>"; };
+		3CD70F4D2F762FC200319C0A /* ARCHITECTURE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ARCHITECTURE.md; sourceTree = "<group>"; };
+		3CD70F4E2F76321500319C0A /* InstructionsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsCard.swift; sourceTree = "<group>"; };
+		3CD70F502F76324700319C0A /* TESTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TESTING.md; sourceTree = "<group>"; };
+		3CD70F512F76336200319C0A /* UserActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityService.swift; sourceTree = "<group>"; };
+		3CD70F532F76337100319C0A /* BackgroundTaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskService.swift; sourceTree = "<group>"; };
+		3CD70F552F7633B100319C0A /* ActivityStatusCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatusCard.swift; sourceTree = "<group>"; };
+		3CD70F572F76345C00319C0A /* BACKGROUND_MONITORING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BACKGROUND_MONITORING.md; sourceTree = "<group>"; };
+		3CD70F582F76348200319C0A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3CD70F592F76365A00319C0A /* DeviceMovementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMovementService.swift; sourceTree = "<group>"; };
+		3CD70F5B2F76371100319C0A /* HUMAN_DETECTION.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = HUMAN_DETECTION.md; sourceTree = "<group>"; };
+		3CD70F5C2F76390300319C0A /* QUICK_TEST_GUIDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = QUICK_TEST_GUIDE.md; sourceTree = "<group>"; };
+		3CD70F5D2F763D1500319C0A /* DeviceStateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStateService.swift; sourceTree = "<group>"; };
+		3CD70F5F2F763D9B00319C0A /* SMART_CONTEXT_DETECTION.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SMART_CONTEXT_DETECTION.md; sourceTree = "<group>"; };
+		3CD70F602F76430900319C0A /* OrientationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationService.swift; sourceTree = "<group>"; };
+		3CD70F622F76437C00319C0A /* ORIENTATION_DETECTION.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ORIENTATION_DETECTION.md; sourceTree = "<group>"; };
+		B9D07E673D61128B14400DED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CF511D7FED3FFA991E6F797D /* PostureHelpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostureHelpApp.swift; sourceTree = "<group>"; };
+		D03E3496FA5F5B4FF2B1F2A5 /* PostureHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostureHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		19E0F3F8991D764E4620C697 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D03E3496FA5F5B4FF2B1F2A5 /* PostureHelp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3CD70F2B2F762ED400319C0A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3CD70F302F762EE500319C0A /* PostureState.swift */,
+				3CD70F322F762EE600319C0A /* PostureConfiguration.swift */,
+				3CD70F342F762EE700319C0A /* PostureMetrics.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3CD70F2C2F762ED500319C0A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3CD70F3C2F762F2100319C0A /* PostureViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3CD70F2D2F762ED500319C0A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3CD70F422F762F5800319C0A /* Components */,
+				3CD70F4B2F762F8D00319C0A /* PostureMonitorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3CD70F2E2F762ED600319C0A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3CD70F362F762F0300319C0A /* MotionService.swift */,
+				3CD70F382F762F0300319C0A /* HapticService.swift */,
+				3CD70F3A2F762F0400319C0A /* NotificationService.swift */,
+				3CD70F512F76336200319C0A /* UserActivityService.swift */,
+				3CD70F532F76337100319C0A /* BackgroundTaskService.swift */,
+				3CD70F592F76365A00319C0A /* DeviceMovementService.swift */,
+				3CD70F5D2F763D1500319C0A /* DeviceStateService.swift */,
+				3CD70F602F76430900319C0A /* OrientationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3CD70F2F2F762ED600319C0A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3CD70F3E2F762F3400319C0A /* Theme.swift */,
+				3CD70F402F762F3400319C0A /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3CD70F422F762F5800319C0A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3CD70F432F762F7700319C0A /* PostureStatusCard.swift */,
+				3CD70F452F762F7800319C0A /* MetricsCard.swift */,
+				3CD70F472F762F7800319C0A /* SettingsCard.swift */,
+				3CD70F492F762F7900319C0A /* ActionButton.swift */,
+				3CD70F4E2F76321500319C0A /* InstructionsCard.swift */,
+				3CD70F552F7633B100319C0A /* ActivityStatusCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BBE69D83948246DE391BF88D = {
+			isa = PBXGroup;
+			children = (
+				FDD24C07C799B4813926F6F9 /* Sources */,
+				19E0F3F8991D764E4620C697 /* Products */,
+				3CD70F4D2F762FC200319C0A /* ARCHITECTURE.md */,
+				3CD70F502F76324700319C0A /* TESTING.md */,
+				3CD70F572F76345C00319C0A /* BACKGROUND_MONITORING.md */,
+				3CD70F582F76348200319C0A /* README.md */,
+				3CD70F5B2F76371100319C0A /* HUMAN_DETECTION.md */,
+				3CD70F5C2F76390300319C0A /* QUICK_TEST_GUIDE.md */,
+				3CD70F5F2F763D9B00319C0A /* SMART_CONTEXT_DETECTION.md */,
+				3CD70F622F76437C00319C0A /* ORIENTATION_DETECTION.md */,
+			);
+			sourceTree = "<group>";
+		};
+		FDD24C07C799B4813926F6F9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B9D07E673D61128B14400DED /* ContentView.swift */,
+				CF511D7FED3FFA991E6F797D /* PostureHelpApp.swift */,
+				2AA3F73B9B954BB1C14859AD /* Info.plist */,
+				3CD70F2B2F762ED400319C0A /* Models */,
+				3CD70F2C2F762ED500319C0A /* ViewModels */,
+				3CD70F2D2F762ED500319C0A /* Views */,
+				3CD70F2E2F762ED600319C0A /* Services */,
+				3CD70F2F2F762ED600319C0A /* Utilities */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D6F236BB28FD0AB1D2530BF /* PostureHelp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CE565983B98C7AF5E5AFA31 /* Build configuration list for PBXNativeTarget "PostureHelp" */;
+			buildPhases = (
+				84756A1ED3129284B4319F5E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PostureHelp;
+			packageProductDependencies = (
+			);
+			productName = "ios-coremotion-20260304-140650-6060c8";
+			productReference = D03E3496FA5F5B4FF2B1F2A5 /* PostureHelp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63A50745A699783140CBE195 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 891979328C00A94B787F2735 /* Build configuration list for PBXProject "PostureHelp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = BBE69D83948246DE391BF88D;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D6F236BB28FD0AB1D2530BF /* PostureHelp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84756A1ED3129284B4319F5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CD70F5A2F76365A00319C0A /* DeviceMovementService.swift in Sources */,
+				3CD70F542F76337100319C0A /* BackgroundTaskService.swift in Sources */,
+				3CD70F392F762F0300319C0A /* HapticService.swift in Sources */,
+				D28DA011E7771D7782DDE033 /* ContentView.swift in Sources */,
+				3CD70F352F762EE700319C0A /* PostureMetrics.swift in Sources */,
+				3CD70F312F762EE500319C0A /* PostureState.swift in Sources */,
+				3CD70F3B2F762F0400319C0A /* NotificationService.swift in Sources */,
+				3CD70F562F7633B100319C0A /* ActivityStatusCard.swift in Sources */,
+				EA0EEA22FDAB54D1941B473A /* PostureHelpApp.swift in Sources */,
+				3CD70F4F2F76321500319C0A /* InstructionsCard.swift in Sources */,
+				3CD70F462F762F7800319C0A /* MetricsCard.swift in Sources */,
+				3CD70F332F762EE600319C0A /* PostureConfiguration.swift in Sources */,
+				3CD70F4C2F762F8D00319C0A /* PostureMonitorView.swift in Sources */,
+				3CD70F482F762F7800319C0A /* SettingsCard.swift in Sources */,
+				3CD70F3F2F762F3400319C0A /* Theme.swift in Sources */,
+				3CD70F612F76430900319C0A /* OrientationService.swift in Sources */,
+				3CD70F5E2F763D1500319C0A /* DeviceStateService.swift in Sources */,
+				3CD70F372F762F0300319C0A /* MotionService.swift in Sources */,
+				3CD70F412F762F3400319C0A /* Extensions.swift in Sources */,
+				3CD70F442F762F7700319C0A /* PostureStatusCard.swift in Sources */,
+				3CD70F522F76336200319C0A /* UserActivityService.swift in Sources */,
+				3CD70F3D2F762F2100319C0A /* PostureViewModel.swift in Sources */,
+				3CD70F4A2F762F7900319C0A /* ActionButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3B7799DE1CC3E3C4BA47661F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryankaya.ioscoremotiondemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		5B7C5E31913569B5E3D543E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryankaya.ioscoremotiondemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7E6DFE5044C8A40314435910 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = N3X2H33TR7;
+				INFOPLIST_FILE = Sources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_NAME = PostureHelp;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B1BD67C822AA2D4D775F44B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = N3X2H33TR7;
+				INFOPLIST_FILE = Sources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_NAME = PostureHelp;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3CE565983B98C7AF5E5AFA31 /* Build configuration list for PBXNativeTarget "PostureHelp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1BD67C822AA2D4D775F44B1 /* Debug */,
+				7E6DFE5044C8A40314435910 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		891979328C00A94B787F2735 /* Build configuration list for PBXProject "PostureHelp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B7C5E31913569B5E3D543E5 /* Debug */,
+				3B7799DE1CC3E3C4BA47661F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63A50745A699783140CBE195 /* Project object */;
+}
