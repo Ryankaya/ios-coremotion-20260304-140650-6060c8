@@ -3,24 +3,36 @@ import UIKit
 import AudioToolbox
 
 protocol HapticServiceProtocol {
-    func playPostureAlert()
+    func play(_ pattern: HapticPattern)
 }
 
 final class HapticService: HapticServiceProtocol {
     private var hapticEngine: CHHapticEngine?
-    
+
     init() {
         prepareHaptics()
     }
-    
-    func playPostureAlert() {
+
+    func play(_ pattern: HapticPattern) {
         guard UIApplication.shared.applicationState == .active else { return }
-        
-        if playCustomPattern() {
+
+        switch pattern {
+        case .none:
             return
+        case .warning:
+            playWarningTap()
+        case .alert:
+            if playCustomPattern() {
+                return
+            }
+            playFallbackPattern()
         }
-        
-        playFallbackPattern()
+    }
+
+    private func playWarningTap() {
+        let lightImpact = UIImpactFeedbackGenerator(style: .light)
+        lightImpact.prepare()
+        lightImpact.impactOccurred(intensity: 0.6)
     }
     
     private func prepareHaptics() {

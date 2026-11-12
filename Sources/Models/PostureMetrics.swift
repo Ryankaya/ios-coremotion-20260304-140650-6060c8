@@ -10,4 +10,22 @@ struct PostureMetrics {
     var isBaselineSet: Bool {
         baselinePitch != 0
     }
+    
+    /// Which haptic pattern, if any, corresponds to the current posture state.
+    var hapticPattern: HapticPattern {
+        switch postureState {
+        case .unknown, .good:
+            return .none
+        case .warning:
+            return .warning
+        case .alert:
+            return .alert
+        }
+    }
+}
+
+enum HapticPattern {
+    case none
+    case warning
+    case alert
 }

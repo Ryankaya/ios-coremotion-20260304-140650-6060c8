@@ -285,7 +285,8 @@ final class PostureViewModel: ObservableObject {
         if forwardLeanStartDate == nil {
             forwardLeanStartDate = Date()
             metrics.postureState = .warning
-            
+            hapticService.play(metrics.hapticPattern)
+
             #if DEBUG
             print("⚠️ Started leaning forward - timer started")
             #endif
@@ -395,7 +396,7 @@ final class PostureViewModel: ObservableObject {
         print("   Next alert after: \(Date().addingTimeInterval(configuration.reminderIntervalSeconds))")
         #endif
         
-        hapticService.playPostureAlert()
+        hapticService.play(metrics.hapticPattern)
         notificationService.sendPostureAlert(leanDegrees: leanDelta)
         
         metrics.lastAlertDate = Date()
