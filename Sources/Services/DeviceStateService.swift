@@ -51,34 +51,33 @@ final class DeviceStateService: DeviceStateServiceProtocol, ObservableObject {
         cancellables.removeAll()
         proximityCheckTimer?.invalidate()
         proximityCheckTimer = nil
-        screenLockCheckTimer?.invalidate()
-        screenLockCheckTimer = nil
         UIDevice.current.isProximityMonitoringEnabled = false
     }
     
     private func setupScreenLockMonitoring() {
-        // Monitor app state changes
-        NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)
+        // protectedData notifications fire only when the device is actually locked/unlocked,
+        // unlike app foreground/background which also fires when switching to another app
+        // (e.g. Safari) while the screen stays on and unlocked. That distinction matters here:
+        // a backgrounded-but-unlocked phone should still alert, a locked one shouldn't.
+        NotificationCenter.default.publisher(for: UIApplication.protectedDataWillBecomeUnavailableNotification)
             .sink { [weak self] _ in
-                self?.handleAppWillResignActive()
+                self?.isScreenLocked = true
+                self?.updateState()
+                
+                #if DEBUG
+                print("🔒 Device locked")
+                #endif
             }
             .store(in: &cancellables)
         
-        NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
+        NotificationCenter.default.publisher(for: UIApplication.protectedDataDidBecomeAvailableNotification)
             .sink { [weak self] _ in
-                self?.handleAppDidBecomeActive()
-            }
-            .store(in: &cancellables)
-        
-        NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)
-            .sink { [weak self] _ in
-                self?.handleAppDidEnterBackground()
-            }
-            .store(in: &cancellables)
-        
-        NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)
-            .sink { [weak self] _ in
-                self?.handleAppWillEnterForeground()
+                self?.isScreenLocked = false
+                self?.updateState()
+                
+                #if DEBUG
+                print("🔓 Device unlocked")
+                #endif
             }
             .store(in: &cancellables)
     }
@@ -98,56 +97,6 @@ final class DeviceStateService: DeviceStateServiceProtocol, ObservableObject {
         proximityCheckTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
             self?.checkProximityState()
         }
-    }
-    
-    private var screenLockCheckTimer: Timer?
-    
-    private func handleAppWillResignActive() {
-        // App is losing focus - could be switching apps, not screen lock
-        // Don't mark as locked - notifications work fine
-        #if DEBUG
-        print("📱 App will resign active")
-        #endif
-    }
-    
-    private func handleAppDidBecomeActive() {
-        // App came to foreground
-        isScreenLocked = false
-        updateState()
-        
-        #if DEBUG
-        print("✅ App became active")
-        #endif
-    }
-    
-    private func handleAppDidEnterBackground() {
-        // App in background - could be:
-        // 1. Using other apps (YouTube, Safari) - SHOULD alert
-        // 2. Screen locked - rely on proximity sensor to detect
-        
-        // Don't mark as locked - let proximity sensor handle it
-        isScreenLocked = false
-        
-        #if DEBUG
-        print("📱 App entered background - alerts continue (unless in pocket)")
-        #endif
-    }
-    
-    private func handleAppWillEnterForeground() {
-        // App coming back to foreground
-        isScreenLocked = false
-        updateState()
-        
-        #if DEBUG
-        print("📱 App returning to foreground")
-        #endif
-    }
-    
-    private func checkIfScreenLocked() {
-        // We don't have a reliable way to detect screen lock vs background app usage
-        // iOS sends notifications regardless of screen lock state
-        // Only use proximity sensor to detect "unusable" state
-        isScreenLocked = false
     }
     
     private func handleProximityChange() {
@@ -172,8 +121,7 @@ final class DeviceStateService: DeviceStateServiceProtocol, ObservableObject {
     }
     
     private func checkCurrentState() {
-        let appState = UIApplication.shared.applicationState
-        isScreenLocked = (appState == .background)
+        isScreenLocked = !UIApplication.shared.isProtectedDataAvailable
         isInPocket = UIDevice.current.proximityState
         updateState()
     }

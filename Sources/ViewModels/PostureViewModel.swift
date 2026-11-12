@@ -69,11 +69,13 @@ final class PostureViewModel: ObservableObject {
             .sink { [weak self] state in
                 self?.isScreenLocked = state.isScreenLocked
                 self?.isInPocket = state.isInPocket
-                
-                // Update status message when pocket state changes
+
+                // Update status message when pocket/lock state changes
                 if state.isInPocket {
                     self?.statusMessage = "Device in pocket - alerts paused"
-                } else if !state.isInPocket && self?.isMonitoring == true {
+                } else if state.isScreenLocked {
+                    self?.statusMessage = "Device locked - alerts paused"
+                } else if self?.isMonitoring == true {
                     self?.statusMessage = "Monitoring (alerts work in background)"
                 }
             }
@@ -173,11 +175,14 @@ final class PostureViewModel: ObservableObject {
             return
         }
         
+        startMotionUpdates()
+        activityService.startMonitoring()
+        movementService.startMonitoring()
+        deviceStateService.startMonitoring()
+        orientationService.startMonitoring()
+
         if !metrics.isBaselineSet {
             statusMessage = "Auto-calibrating baseline..."
-            startMotionUpdates()
-            activityService.startMonitoring()
-            movementService.startMonitoring()
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
                 self?.calibrateBaseline()
                 self?.isMonitoring = true
@@ -185,16 +190,10 @@ final class PostureViewModel: ObservableObject {
             }
             return
         }
-        
+
         isMonitoring = true
         statusMessage = "Monitoring posture in background..."
         forwardLeanStartDate = nil
-        
-        startMotionUpdates()
-        activityService.startMonitoring()
-        movementService.startMonitoring()
-        deviceStateService.startMonitoring()
-        orientationService.startMonitoring()
     }
     
     private func startMotionUpdates() {
@@ -356,14 +355,23 @@ final class PostureViewModel: ObservableObject {
         }
         
         // Don't alert if device is in pocket (proximity sensor covered)
-        // This also covers screen lock - if locked and in pocket, proximity will detect it
         if isInPocket {
             #if DEBUG
             print("👖 Alert skipped - device in pocket (proximity sensor covered)")
             #endif
             return
         }
-        
+
+        // Don't alert if the device is locked. A loose pocket or bag won't always
+        // cover the proximity sensor, but it will almost always leave the screen
+        // locked - and a posture nudge is only useful while actually looking at the phone.
+        if isScreenLocked {
+            #if DEBUG
+            print("🔒 Alert skipped - device is locked")
+            #endif
+            return
+        }
+
         // Don't alert if user is not active (walking, etc.)
         if onlyAlertWhenActive && !isUserActive {
             #if DEBUG

@@ -90,7 +90,11 @@ struct ActivityStatusCard: View {
         if isInPocket {
             return "figure.stand.line.dotted.figure.stand"
         }
-        
+
+        if isScreenLocked {
+            return "lock.fill"
+        }
+
         if detectDeviceOnTable && !isHumanHolding {
             return "iphone"
         }
@@ -106,7 +110,11 @@ struct ActivityStatusCard: View {
         if isInPocket {
             return Color.orange
         }
-        
+
+        if isScreenLocked {
+            return Color.orange
+        }
+
         if detectDeviceOnTable && !isHumanHolding {
             return Color.red
         }
@@ -122,7 +130,11 @@ struct ActivityStatusCard: View {
         if isInPocket {
             return "In pocket - alerts paused"
         }
-        
+
+        if isScreenLocked {
+            return "Device locked - alerts paused"
+        }
+
         if detectDeviceOnTable && !isHumanHolding {
             return "Device on table - alerts paused"
         }
