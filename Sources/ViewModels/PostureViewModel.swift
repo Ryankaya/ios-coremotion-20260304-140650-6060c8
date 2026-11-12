@@ -28,6 +28,7 @@ final class PostureViewModel: ObservableObject {
     
     private var forwardLeanStartDate: Date?
     private var notificationCooldownUntil: Date = .distantPast
+    private var alertRepeatCount = 0
     private var cancellables = Set<AnyCancellable>()
     
     init(
@@ -270,6 +271,7 @@ final class PostureViewModel: ObservableObject {
                 #endif
             }
             forwardLeanStartDate = nil
+            alertRepeatCount = 0
             metrics.postureState = .good
             if isMonitoring {
                 if detectDeviceOnTable && !isHumanHolding {
@@ -320,8 +322,8 @@ final class PostureViewModel: ObservableObject {
                 #endif
             }
             
-            triggerAlert(leanDelta: leanDelta)
-            
+            triggerAlert(leanDelta: leanDelta, sustainedSeconds: elapsed)
+
             // Reset timer to allow repeated alerts based on interval
             forwardLeanStartDate = Date()
         } else {
@@ -329,7 +331,7 @@ final class PostureViewModel: ObservableObject {
         }
     }
     
-    private func triggerAlert(leanDelta: Double) {
+    private func triggerAlert(leanDelta: Double, sustainedSeconds: Double) {
         #if DEBUG
         print("🔍 === ALERT TRIGGER CHECK ===")
         print("   Lean Delta: \(leanDelta)°")
@@ -405,8 +407,13 @@ final class PostureViewModel: ObservableObject {
         #endif
         
         hapticService.play(metrics.hapticPattern)
-        notificationService.sendPostureAlert(leanDegrees: leanDelta)
-        
+        alertRepeatCount += 1
+        notificationService.sendPostureAlert(
+            leanDegrees: leanDelta,
+            sustainedSeconds: sustainedSeconds,
+            repeatCount: alertRepeatCount
+        )
+
         metrics.lastAlertDate = Date()
         notificationCooldownUntil = Date().addingTimeInterval(configuration.reminderIntervalSeconds)
         

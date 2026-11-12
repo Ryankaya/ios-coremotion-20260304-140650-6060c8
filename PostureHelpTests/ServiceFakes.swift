@@ -47,7 +47,7 @@ final class FakeNotificationService: NotificationServiceProtocol {
         isAuthorized
     }
 
-    func sendPostureAlert(leanDegrees: Double) {
+    func sendPostureAlert(leanDegrees: Double, sustainedSeconds: Double, repeatCount: Int) {
         sentLeanDegrees.append(leanDegrees)
     }
 }
