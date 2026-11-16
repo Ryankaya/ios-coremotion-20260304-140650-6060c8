@@ -31,4 +31,14 @@ enum PostureState: Equatable {
             return "🔴"
         }
     }
+
+    /// Stable string form stored in the App Group snapshot read by widgets.
+    var widgetRawValue: String {
+        switch self {
+        case .unknown: return "unknown"
+        case .good: return "good"
+        case .warning: return "warning"
+        case .alert: return "alert"
+        }
+    }
 }

@@ -6,7 +6,12 @@ final class BackgroundTaskService {
     
     private let taskIdentifier = "com.posturehelp.monitoring"
     private var backgroundTask: UIBackgroundTaskIdentifier = .invalid
-    
+
+    /// Best-effort hook so a Start/Stop/Calibrate request left by a widget while the
+    /// app wasn't running can be picked up the next time iOS actually runs this task.
+    /// Timing is entirely up to the system, not guaranteed or prompt.
+    var onBackgroundWake: (@MainActor () -> Void)?
+
     private init() {}
     
     func registerBackgroundTasks() {
@@ -33,11 +38,15 @@ final class BackgroundTaskService {
     
     private func handleBackgroundTask(task: BGProcessingTask) {
         scheduleBackgroundTask()
-        
+
         task.expirationHandler = {
             task.setTaskCompleted(success: false)
         }
-        
+
+        Task { @MainActor [onBackgroundWake] in
+            onBackgroundWake?()
+        }
+
         DispatchQueue.global().asyncAfter(deadline: .now() + 5) {
             task.setTaskCompleted(success: true)
         }

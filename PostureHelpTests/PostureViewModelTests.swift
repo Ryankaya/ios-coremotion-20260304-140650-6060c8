@@ -14,15 +14,27 @@ struct PostureViewModelTests {
         deviceState: FakeDeviceStateService = FakeDeviceStateService(),
         orientation: FakeOrientationService = FakeOrientationService()
     ) -> PostureViewModel {
-        PostureViewModel(
+        // The widget snapshot lives in a shared App Group, so a previous test that started
+        // monitoring would otherwise make this view model auto-start on init.
+        SharedPostureStore.save(SharedPostureSnapshot())
+        return PostureViewModel(
             motionService: motion,
             hapticService: haptic,
             notificationService: notification,
             activityService: activity,
             movementService: movement,
             deviceStateService: deviceState,
-            orientationService: orientation
+            orientationService: orientation,
+            historyStore: PostureHistoryStore(defaults: Self.ephemeralDefaults()),
+            settingsDefaults: Self.ephemeralDefaults()
         )
+    }
+
+    private static func ephemeralDefaults() -> UserDefaults {
+        let name = "PostureViewModelTests.\(UUID().uuidString)"
+        let defaults = UserDefaults(suiteName: name)!
+        defaults.removePersistentDomain(forName: name)
+        return defaults
     }
 
     /// pitch that produces a lean of `degrees` past the given baseline.
