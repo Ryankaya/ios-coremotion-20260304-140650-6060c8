@@ -1,6 +1,6 @@
 # Posture Help: Privacy Policy
 
-_Last updated: November 16, 2026_
+_Last updated: November 20, 2026 · Publisher: Austin Ventures LLC_
 
 Posture Help is designed so that your data never leaves your device.
 
@@ -30,4 +30,4 @@ If this policy changes, the updated version will be posted at this address with 
 
 ## Contact
 
-Questions? Email ‹contact email›.
+Questions? Email ryankaya.dev@gmail.com.

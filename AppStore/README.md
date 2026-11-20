@@ -1,146 +1,159 @@
-# App Store submission kit: Posture Help 1.0
+# Posture Help 1.0: App Store Connect fill guide
 
-Everything for the **iOS App Version 1.0** page in App Store Connect, in page order.
-Fill in the three `‹placeholders›`; everything else is ready to paste or upload.
+Work through these sections from top to bottom in App Store Connect. Every value below is ready to paste. Items marked **⚠︎ fix** need changing on your current page.
+
+> Requirements checked against Apple's [Screenshot specifications](https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/) and [App Store Connect release notes](https://developer.apple.com/help/app-store-connect/release-notes/) (November 2026).
 
 ---
 
-## 1. Header and Search Results (Product Page Information)
+## A. Distribution → iOS App Version 1.0
 
-Upload **one** of these (both are the same design; the wider one crops more cleanly):
+### A1. Header and Search Results
+Already uploaded (`header/header-3840x1646.png`). Nothing to do.
 
-| File | Size |
-|---|---|
-| `header/header-3840x1646.png` | 3840 × 1646 (recommended) |
-| `header/header-5244x2950.png` | 5244 × 2950 |
+### A2. App Previews and Screenshots ⚠︎ fix
+Apple's **required** iPhone slot is **"iPhone with Dynamic Island (medium display)"**, which takes **1206 × 2622** (or 1179 × 2556). If you uploaded the 1320 × 2868 set there, remove it and use folder 1.
 
-Use **Preview** in App Store Connect to check the Header and Search Results crops. Key content is kept in the centre so it survives both.
-
-> All images are true PNG files (8-bit sRGB, no alpha channel). Don't rename or re-save them as another format: App Store Connect checks the real file type, and files with transparency are rejected.
-
-## 2. App Previews and Screenshots
-
-Upload in this order (drag the whole folder in, then confirm order):
-
-| # | iPhone 6.9" (1320 × 2868), `screenshots/iphone-6.9/` | iPad 13" (2064 × 2752), `screenshots/ipad-13/` | Caption |
+| Upload to tab | Folder | Size | Count |
 |---|---|---|---|
-| 1 | `01-today-good.png` | `01-today-good.png` | Catch the slouch as it happens |
-| 2 | `02-today-alert.png` | `02-today-alert.png` | A gentle nudge before it hurts |
-| 3 | `03-insights.png` | `03-insights.png` | Watch your posture improve |
-| 4 | `04-calibrate.png` | `04-calibrate.png` | Calibrated to your body |
-| 5 | `05-settings.png` | `05-settings.png` | Smart enough to pause |
-| 6 | `06-welcome.png` | `06-welcome.png` | Private by design |
+| **iPhone with Dynamic Island (medium display)**: required | `screenshots/1-REQUIRED-iphone-medium-display-1206x2622/` | 1206 × 2622 | 10 |
+| **iPad 13" display**: required (the app runs on iPad) | `screenshots/2-REQUIRED-ipad-13in-2064x2752/` | 2064 × 2752 | 9 |
+| iPhone large display (6.9"): optional, falls back to medium | `screenshots/3-optional-iphone-large-display-1320x2868/` | 1320 × 2868 | 6 |
+| iPhone Duo: optional until April 2027 (iOS 27.1 SDK builds) | not needed now | n/a | n/a |
 
-App Store Connect scales the 6.9" set down for smaller iPhones and the 13" set for smaller iPads, so these two sets cover every device. iPad screenshots are required because the app supports iPad.
+Drag the files in numbered order (01 → 10):
 
-App preview video: optional, skipped.
+1. Catch the slouch as it happens (live gauge)
+2. A gentle nudge before it hurts (lean alert)
+3. Watch your posture improve (Insights)
+4. Your posture, at a glance (Home Screen widgets; iPhone only)
+5. Calibrated to your body
+6. Reminders that reach you in any app
+7. Smart enough to pause (Settings)
+8. Easy on the eyes, day or night (Dark Mode)
+9. Set up in under a minute
+10. Private by design
 
-## 3. Text fields
-
-**Promotional Text** (156/170, can be changed anytime without review)
+### A3. Promotional Text ⚠︎ fix (it currently holds the subtitle)
 ```
 Catch yourself slouching over your phone. Posture Help notices when you lean forward and gives you a gentle nudge to sit up straight. Private and on-device.
 ```
 
-**Description** (up to 4000)
+### A4. Description / Keywords
+Already filled. ✓
+
+### A5. Support URL ⚠︎ recommended fix
+The current URL is the GitHub code repo. It loads, but App Review expects a page where users can get help. Publish `support.md` (section D) and use its URL, for example:
+`https://ryankaya.github.io/ios-coremotion-20260304-140650-6060c8/AppStore/support`
+
+### A6. Marketing URL
+Leave empty (optional).
+
+### A7. Version / Copyright
+`1.0` / `2026 Austin Ventures LLC` ✓
+
+### A8. Routing App Coverage File, App Clip, iMessage App
+Leave all empty. They're only for navigation apps, App Clips and Messages-framework apps; Posture Help is none of these.
+
+### A9. Build
+Build **1** attached ✓
+
+### A10. Game Center
+Leave unchecked.
+
+### A11. App Review Information
+- **Sign-in required**: unchecked ✓
+- **Contact**: filled ✓
+- **Notes** ⚠︎ fix (currently empty). Paste:
 ```
-Posture Help notices when you're hunching over your phone and gives you a gentle nudge to sit up straight, so better posture becomes a habit instead of a chore.
+Posture Help measures forward lean using the iPhone's motion sensors (CoreMotion), so please review it on a physical iPhone; the Simulator provides no motion data.
 
-HOW IT WORKS
-• Calibrate once: hold your phone the way you normally read while sitting upright.
-• Start a session and use your phone as usual. Posture Help uses the motion sensors to track how far you lean forward.
-• Lean past your threshold for too long and you'll feel a haptic and get a friendly reminder, even while you're in other apps.
-
-SMART PAUSE
-Reminders pause on their own when they wouldn't help: when your phone is in a pocket, locked, or resting on a table. You can also limit them to portrait use or to times you're actively interacting.
-
-SEE YOUR PROGRESS
-• Live lean gauge and session stats
-• Daily upright score, streaks and a 7-day trend
-• Simple habits that help: screen height, regular resets and the 20-20-20 rule
-
-MADE FOR YOU
-• Relaxed, Balanced and Strict sensitivity presets, or fine-tune every threshold
-• Home Screen and Lock Screen widgets with one-tap sessions
-• Control Center controls to start a session or recalibrate
-
-PRIVATE BY DESIGN
-All posture data is processed and stored on your device. No account, no tracking, no ads.
-
-Posture Help is a wellness tool and is not a medical device. If you have pain or a medical condition, talk to a healthcare professional.
-```
-
-**Keywords** (95/100; the app name is indexed separately, so it isn't repeated)
-```
-slouch,back,neck,text neck,ergonomic,reminder,habit,spine,sit straight,corrector,hunch,wellness
-```
-
-**Support URL**: `‹https://your-site/posture-help/support›` (host `support.md`, see section 6)
-
-**Marketing URL**: optional, leave blank.
-
-**Version** `1.0` · **Copyright** `2026 ‹Your name or company›`
-
-**Routing App Coverage File**: not applicable, leave empty.
-
-## 4. App Information (left sidebar → General → App Information)
-
-| Field | Value |
-|---|---|
-| Name | Posture Help |
-| Subtitle (29/30) | `Posture nudges for your phone` |
-| Primary category | Health & Fitness |
-| Secondary category | Lifestyle |
-| Content rights | Does not contain third-party content |
-| Age rating | Answer **None/No** to every question → **4+** |
-
-## 5. App Privacy (left sidebar → Trust & Safety → App Privacy)
-
-- **Privacy Policy URL**: `‹https://your-site/posture-help/privacy›` (host `privacy-policy.md`, see section 6)
-- **Data collection**: choose **"No, we do not collect data from this app."**
-  - This is accurate: the app has no networking code, no analytics or ads SDKs, and no account. Motion readings, settings and history stay in on-device storage, and reminder text is generated on-device.
-- Result on the product page: **Data Not Collected**.
-
-Export compliance: `ITSAppUsesNonExemptEncryption = NO` is now set in `Sources/Info.plist`, so App Store Connect won't ask the encryption question for each build.
-
-## 6. Hosting the two required URLs
-
-App Store Connect needs public URLs for **Support** and **Privacy Policy**. Quickest free options:
-
-- **GitHub Pages**: put `support.md` and `privacy-policy.md` in a public repo, enable Pages, and use the resulting URLs.
-- **Notion / Google Sites**: paste the text and publish to the web.
-
-Replace `‹contact email›` in both files before publishing.
-
-## 7. App Review Information (bottom of the version page)
-
-- **Sign-in required**: No
-- **Contact**: your name, phone and email
-- **Notes** (paste):
-```
-Posture Help measures forward lean using the iPhone's motion sensors (CoreMotion), so it must be reviewed on a physical device; the Simulator has no motion data.
-
-To test:
-1. Complete the short onboarding and allow notifications.
-2. Sit upright and tap "Start Calibration", then hold still for about 4 seconds.
+How to test (about 1 minute):
+1. Complete the short onboarding and tap "Allow Notifications".
+2. Sit upright, tap "Start Calibration", and hold still for about 4 seconds.
 3. On the Today tab, tap "Start Session".
 4. Tilt the top of the phone toward you (as if hunching over it) by about 15-20 degrees and hold for 8 seconds. The gauge turns amber, then you'll feel a haptic and receive a reminder notification.
 5. Reminders pause automatically when the phone is locked, in a pocket, or lying still on a table, so keep the phone in hand and unlocked while testing.
 
-Background modes (fetch/processing) are used only to keep an active session's reminders working when the user switches apps. No account or network access is needed, and no data leaves the device.
+Background mode "processing" is used only to keep an active session's reminders working after the user switches apps. Reminder text is generated on-device with Apple's Foundation Models framework. The app has no account, makes no network requests, and no data leaves the device.
+
+Widgets (Home Screen, Lock Screen) and Control Center controls are included and can start/stop a session.
 ```
+- **Attachment**: optional. Skip it, or attach a short screen recording from a real device of steps 2–4.
 
-## 8. Build
-
-Select the uploaded build in the **Build** section (Xcode → Product → Archive → Distribute App → App Store Connect). Then **Add for Review**.
+### A12. App Store Version Release
+"Automatically release this version" is fine. Choose Manual if you want to pick the launch day.
 
 ---
 
-### Regenerating the images
+## B. General (left sidebar)
 
-The screenshots come from the real app running in **demo mode** (Debug builds only). Simulated motion and sample history stand in for the Simulator's missing sensors. To rebuild after UI changes:
+### B1. App Information
+| Field | Value |
+|---|---|
+| Name | Posture Help |
+| Subtitle | `Posture nudges for your phone` |
+| Primary category | Health & Fitness |
+| Secondary category | Lifestyle |
+| Content Rights | "No, it does not contain, show, or access third-party content" |
+| Age Rating | Edit → answer **None / No** to every item, including the new **Shared Location** and **Dating and Relationships** descriptors → result **4+** |
 
-1. Run the app on an iPhone 6.9" and an iPad 13" simulator with launch arguments
-   `-hasCompletedOnboarding YES -demoMode YES` plus optionally `-demoLean 19`, `-demoTab insights|settings`, `-demoIdle YES -demoCalibrate YES`.
-2. Save the raw captures into `raw/` with the same file names.
-3. From the repo root: `swift AppStore/compose.swift`
+### B2. App Compliance (new)
+Apple moved regulatory declarations here. Answer:
+- **Medical device**: **No**. Posture Help is a general wellness app; it doesn't diagnose, treat or prevent any condition (the description says so).
+- **AI-generated content**: the app uses Apple's on-device Foundation Models to write short reminder messages. If the form asks whether the app generates text with AI, answer **Yes** and describe it as "short posture reminder notifications generated on-device; no user-submitted content, no image or media generation".
+- **Regulations / permits** (ICP, game license, China security assessment): **Not applicable**, unless you distribute in China mainland.
+
+I couldn't find Apple's full question list for this page, so if a question doesn't match the above, paste it here and I'll answer it.
+
+### B3. App Review
+Status view only.
+
+---
+
+## C. App Store (left sidebar)
+
+### C1. App Privacy (Trust & Safety)
+1. **Privacy Policy URL**: publish `privacy-policy.md` (section D) and paste its URL.
+2. **Data collection** → **"No, we do not collect data from this app"** → **Publish**.
+   Accurate because the app has no networking code, no analytics/ads SDKs and no account. Motion data, settings and history stay on the device.
+
+### C2. App Accessibility (Accessibility Nutrition Labels)
+Optional today, but Apple says it will become required over time. Declare only what holds for the app's common tasks (calibrate, start/end a session, view Insights, change settings):
+- **Dark Interface**: **Yes**. The whole app and its widgets support Dark Mode.
+- VoiceOver, Voice Control, Larger Text (200%), Sufficient Contrast, Differentiate Without Color, Reduced Motion, Captions, Audio Descriptions: **don't declare yet**. They haven't been audited. I can audit them and fix any gaps if you'd like.
+
+### C3. Ratings and Reviews, In-App Events, Custom Product Pages, Promo Codes, Game Center
+Nothing required.
+
+### C4. Pricing and Availability (Monetization)
+- **Price**: Free (or choose a tier).
+- **Availability**: All countries/regions.
+- **EU (Digital Services Act)**: Apple requires a trader declaration to sell in the EU. Austin Ventures LLC is a business, so declare **Trader**. Apple then shows your business address, phone and email on the EU product page. If you'd rather not, untick the EU countries.
+
+---
+
+## D. Hosting the Support and Privacy pages (needed for A5 and C1)
+
+`support.md` and `privacy-policy.md` in this folder are ready. Both use `ryankaya.dev@gmail.com` as the contact; change it if you want a different public address.
+
+Fastest route, using your existing public repo:
+1. Commit and push the `AppStore/` folder to `main`.
+2. On GitHub: **Settings → Pages → Build and deployment → Deploy from a branch → main / (root) → Save**.
+3. After about a minute your URLs are:
+   - Support: `https://ryankaya.github.io/ios-coremotion-20260304-140650-6060c8/AppStore/support`
+   - Privacy: `https://ryankaya.github.io/ios-coremotion-20260304-140650-6060c8/AppStore/privacy-policy`
+4. Open both in a browser to check, then paste them into A5 and C1.
+
+---
+
+## E. Submit
+**Save → Add for Review →** fix anything App Store Connect lists → **Submit for Review**. Review usually takes 24–48 hours.
+
+---
+
+### Regenerating screenshots after UI changes
+1. Boot an iPhone with a 1206 × 2622 screen (iPhone 18 Pro / 17 Pro) and an iPad Pro 13" simulator.
+2. Build the Debug app, then run `AppStore/capture.sh <udid> <path/to/PostureHelp.app> iphone63` (or `ipad`). The script uses the debug-only demo mode: `-demoMode YES`, `-demoLean`, `-demoTab`, `-demoCalibrate`, `-demoOnboardingStep`.
+3. The widgets shot (`raw/iphone63_10_widgets.png`) is captured by hand: add the small and medium widgets to the Home Screen while a demo session is running.
+4. From the repo root: `swift AppStore/compose.swift`

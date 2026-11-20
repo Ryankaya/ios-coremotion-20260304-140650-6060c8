@@ -23,12 +23,17 @@ struct Caption {
     let subtitle: String
 }
 
+// Marketing order: strongest message first. Scenes missing for a device (e.g. widgets on iPad) are skipped.
 let captions: [Caption] = [
     .init(file: "1_today_good", title: "Catch the slouch\nas it happens", subtitle: "Live posture tracking with your iPhone's motion sensors."),
     .init(file: "2_today_alert", title: "A gentle nudge\nbefore it hurts", subtitle: "A haptic and a reminder when you lean too long."),
     .init(file: "3_insights", title: "Watch your posture\nimprove", subtitle: "Daily scores, streaks and weekly trends."),
+    .init(file: "10_widgets", title: "Your posture,\nat a glance", subtitle: "Home Screen widgets with one-tap sessions."),
     .init(file: "4_calibrate", title: "Calibrated to\nyour body", subtitle: "Set your own upright baseline in seconds."),
+    .init(file: "8_reminders", title: "Reminders that reach\nyou in any app", subtitle: "Gentle notifications while you scroll, read or watch."),
     .init(file: "5_settings", title: "Smart enough\nto pause", subtitle: "No nags while your phone is pocketed, locked or on a table."),
+    .init(file: "9_today_dark", title: "Easy on the eyes,\nday or night", subtitle: "Full Dark Mode support."),
+    .init(file: "7_how_it_works", title: "Set up in\nunder a minute", subtitle: "Calibrate once, then use your phone as usual."),
     .init(file: "6_welcome", title: "Private by design", subtitle: "All posture data stays on your device."),
 ]
 
@@ -84,6 +89,9 @@ struct ScreenshotPoster: View {
                     .font(.system(size: titleSize, weight: .bold, design: .rounded))
                     .multilineTextAlignment(.center)
                     .lineSpacing(4)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.6)
+                    .frame(maxWidth: size.width * 0.9)
                 Text(caption.subtitle)
                     .font(.system(size: subtitleSize, weight: .medium, design: .rounded))
                     .multilineTextAlignment(.center)
@@ -182,23 +190,29 @@ func render<V: View>(_ view: V, size: CGSize, to url: URL) throws {
 }
 
 func load(_ name: String) -> NSImage {
-    guard let image = NSImage(contentsOf: root.appendingPathComponent("raw/\(name).png")) else {
-        fatalError("Missing raw capture \(name).png")
-    }
+    guard let image = loadIfPresent(name) else { fatalError("Missing raw capture \(name).png") }
     return image
+}
+
+func loadIfPresent(_ name: String) -> NSImage? {
+    NSImage(contentsOf: root.appendingPathComponent("raw/\(name).png"))
 }
 
 @MainActor
 func main() throws {
+    // Folder names follow App Store Connect's display slots (Nov 2026 screenshot specifications).
     let targets: [(prefix: String, folder: String, size: CGSize, isPad: Bool)] = [
-        ("iphone", "iphone-6.9", CGSize(width: 1320, height: 2868), false),
-        ("ipad", "ipad-13", CGSize(width: 2064, height: 2752), true),
+        ("iphone63", "1-REQUIRED-iphone-medium-display-1206x2622", CGSize(width: 1206, height: 2622), false),
+        ("ipad", "2-REQUIRED-ipad-13in-2064x2752", CGSize(width: 2064, height: 2752), true),
+        ("iphone", "3-optional-iphone-large-display-1320x2868", CGSize(width: 1320, height: 2868), false),
     ]
     for target in targets {
-        for (index, caption) in captions.enumerated() {
-            let image = load("\(target.prefix)_\(caption.file)")
+        var index = 0
+        for caption in captions {
+            guard let image = loadIfPresent("\(target.prefix)_\(caption.file)") else { continue }
+            index += 1
             let name = caption.file.drop(while: { $0.isNumber || $0 == "_" }).replacingOccurrences(of: "_", with: "-")
-            let out = root.appendingPathComponent("screenshots/\(target.folder)/\(String(format: "%02d", index + 1))-\(name).png")
+            let out = root.appendingPathComponent("screenshots/\(target.folder)/\(String(format: "%02d", index))-\(name).png")
             try render(ScreenshotPoster(caption: caption, image: image, size: target.size, isPad: target.isPad), size: target.size, to: out)
         }
     }

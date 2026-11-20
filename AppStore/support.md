@@ -1,6 +1,6 @@
 # Posture Help: Support
 
-Need help? Email **‹contact email›** and we'll get back to you.
+Need help? Email **ryankaya.dev@gmail.com** and we'll get back to you.
 
 ## Getting started
 
